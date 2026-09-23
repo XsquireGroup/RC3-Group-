@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RC3 Group — Built on Resilience. Designed to Thrive.</title>
+<meta name="description" content="RC3 Group is a Cincinnati-based multi-vertical holding company operating across logistics, real estate, media, beverage, and philanthropic ventures. Founded by Richard L. Crosby III.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.therc3group.com">
+<meta property="og:title" content="RC3 Group — Built on Resilience. Designed to Thrive.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F7F4EF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Barlow+Condensed:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F7F4EF;
+  --paper-alt: #EDEBE7;
+  --ink: #0A0A0A;
+  --ink-mid: #4A4744;
+  --ink-light: #9A9691;
+  --red: #B91C1C;
+  --white: #FFFFFF;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  overflow-x: hidden;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; height: 80px;
+  background: rgba(247,244,239,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(10,10,10,0.08);
+}
+.nav-logo img { height: 56px; width: auto; display: block; }
+nav ul { display: flex; list-style: none; gap: 36px; align-items: center; }
+nav ul a {
+  color: var(--ink-mid); text-decoration: none;
+  font-family: var(--font-body); font-size: 13px; font-weight: 400;
+  letter-spacing: 0.02em; transition: color 0.2s;
+}
+nav ul a:hover { color: var(--ink); }
+.nav-contact {
+  font-weight: 500 !important; color: var(--ink) !important;
+  border-bottom: 2px solid var(--red); padding-bottom: 1px;
+}
+
+/* HERO */
+#hero {
+  min-height: 100vh; padding-top: 80px;
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: var(--paper);
+}
+.hero-bg-text {
+  position: absolute; top: 50%; left: -2%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-weight: 900; font-size: 22vw;
+  line-height: 0.85; color: rgba(10,10,10,0.04);
+  letter-spacing: -0.02em; user-select: none;
+  white-space: nowrap; pointer-events: none; z-index: 0;
+}
+.hero-left {
+  padding: 72px 56px 72px 56px;
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hero-label {
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  color: var(--ink); letter-spacing: 0.04em;
+  margin-bottom: 28px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-label::before {
+  content: ""; display: inline-block;
+  width: 32px; height: 1px; background: var(--red);
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(60px, 7.5vw, 112px);
+  font-weight: 900; line-height: 0.92;
+  color: var(--ink); letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+.hero-headline .line-red { color: var(--red); }
+.hero-sub {
+  font-size: 18px; line-height: 1.75;
+  color: var(--ink-mid); max-width: 420px;
+  margin-bottom: 48px; font-weight: 300;
+}
+.hero-ctas { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-solid {
+  background: var(--ink); color: var(--paper);
+  text-decoration: none; font-family: var(--font-body);
+  font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  padding: 14px 30px; transition: background 0.2s; display: inline-block;
+}
+.btn-solid:hover { background: var(--red); }
+.btn-text {
+  color: var(--ink-mid); text-decoration: none;
+  font-family: var(--font-body); font-size: 13px; font-weight: 400;
+  border-bottom: 1px solid var(--ink-light); padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-text:hover { color: var(--red); border-color: var(--red); }
+.hero-metrics {
+  display: flex; gap: 40px; margin-top: 60px;
+  padding-top: 32px; border-top: 1px solid rgba(10,10,10,0.1);
+  flex-wrap: wrap;
+}
+.metric-num {
+  font-family: var(--font-display); font-size: 52px; font-weight: 900;
+  color: var(--ink); line-height: 1; margin-bottom: 4px;
+}
+.metric-num sup { font-size: 26px; color: var(--red); vertical-align: super; }
+.metric-label { font-size: 12px; color: var(--ink-light); font-weight: 400; letter-spacing: 0.04em; }
+
+/* SLIDESHOW */
+.hero-right {
+  position: relative; z-index: 2; overflow: hidden;
+  min-height: calc(100vh - 80px);
+}
+.slide {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity 0.8s ease;
+  display: flex; align-items: center; justify-content: center;
+}
+.slide.active { opacity: 1; }
+.slide img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.slide-logo {
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+}
+.slide-logo img { width: 70%; max-width: 400px; object-fit: contain; }
+.slide::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 80px;
+  background: linear-gradient(to right, var(--paper), transparent);
+  z-index: 3;
+}
+.slide-label {
+  position: absolute; bottom: 24px; left: 24px; z-index: 4;
+  font-family: var(--font-body); font-size: 12px; font-weight: 400;
+  color: rgba(247,244,239,0.75); letter-spacing: 0.06em;
+  background: rgba(10,10,10,0.5); padding: 6px 12px;
+  backdrop-filter: blur(4px);
+}
+.slide-dots {
+  position: absolute; bottom: 20px; right: 20px; z-index: 5;
+  display: flex; gap: 8px;
+}
+.dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(247,244,239,0.4); cursor: pointer;
+  transition: background 0.3s; border: none; padding: 0;
+}
+.dot.active { background: var(--red); }
+
+/* RED RULE */
+.red-rule { height: 3px; background: var(--red); border: none; }
+
+/* IDENTITY */
+#identity { padding: 100px 56px; background: var(--white); }
+.identity-grid {
+  display: grid; grid-template-columns: 5fr 7fr;
+  gap: 80px; align-items: start;
+}
+.section-label {
+  font-family: var(--font-body); font-size: 12px; font-weight: 600;
+  color: var(--ink); letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::before {
+  content: ""; display: inline-block;
+  width: 24px; height: 1px; background: var(--red);
+}
+.section-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 4.5vw, 66px);
+  font-weight: 900; line-height: 0.95;
+  color: var(--ink); letter-spacing: -0.01em; margin-bottom: 24px;
+}
+.identity-body {
+  font-size: 17px; line-height: 1.8;
+  color: var(--ink-mid); margin-bottom: 18px;
+}
+.identity-body strong { color: var(--ink); font-weight: 500; }
+.identity-quote {
+  margin-top: 36px; padding: 28px 0 0 0;
+  border-top: 1px solid rgba(10,10,10,0.1);
+}
+.identity-quote p {
+  font-family: var(--font-display); font-size: 22px;
+  font-weight: 700; line-height: 1.4; color: var(--ink);
+  font-style: italic; margin-bottom: 14px;
+}
+.identity-quote cite {
+  font-size: 14px; color: var(--ink);
+  font-weight: 700; font-style: normal; letter-spacing: 0.02em;
+}
+.pillars { display: flex; flex-direction: column; gap: 1px; }
+.pillar {
+  padding: 28px 0; border-bottom: 1px solid rgba(10,10,10,0.1);
+  display: grid; grid-template-columns: 1fr 3fr; gap: 24px; align-items: start;
+}
+.pillar:last-child { border-bottom: none; }
+.pillar-num {
+  font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  color: var(--red); padding-top: 2px;
+}
+.pillar-content h3 {
+  font-family: var(--font-body); font-size: 16px; font-weight: 600;
+  color: var(--ink); margin-bottom: 6px;
+}
+.pillar-content p { font-size: 15px; color: var(--ink-mid); line-height: 1.7; }
+
+/* VENTURES */
+#ventures { padding: 100px 56px; background: var(--paper-alt); }
+.ventures-intro {
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: 80px; align-items: end; margin-bottom: 64px;
+}
+.ventures-intro-right p {
+  font-size: 18px; color: var(--ink-mid); line-height: 1.75; max-width: 560px;
+}
+.ventures-list { display: flex; flex-direction: column; gap: 1px; }
+.v-row {
+  display: grid; grid-template-columns: 60px 1fr 340px 120px 40px;
+  align-items: center; gap: 28px;
+  padding: 32px 0; border-bottom: 1px solid rgba(10,10,10,0.1);
+  text-decoration: none; color: inherit; position: relative;
+  transition: padding-left 0.2s;
+}
+.v-row:first-child { border-top: 1px solid rgba(10,10,10,0.1); }
+.v-row:hover .v-name { color: var(--red); }
+.v-row:hover .v-arrow { transform: translateX(4px); color: var(--red); }
+.v-index {
+  font-family: var(--font-display); font-size: 28px;
+  font-weight: 900; color: var(--red); line-height: 1;
+}
+.v-name {
+  font-family: var(--font-display); font-size: 30px;
+  font-weight: 900; color: var(--ink); line-height: 1;
+  margin-bottom: 5px; letter-spacing: -0.01em; transition: color 0.2s;
+}
+.v-desc { font-size: 14px; color: var(--ink-light); line-height: 1.5; }
+.v-logo-wrap {
+  background: transparent; padding: 8px;
+  display: flex; align-items: center; justify-content: center;
+  height: 200px; width: 320px;
+}
+.v-logo-wrap img { height: 180px; width: auto; max-width: 300px; object-fit: contain; }
+.v-logo-wrap.on-white { background: transparent; padding: 8px; border: none; }
+.v-logo-wrap.on-white img { filter: none; height: 180px; }
+.v-tag-pill {
+  display: inline-block; font-size: 11px; font-weight: 500;
+  color: var(--ink-light); letter-spacing: 0.04em;
+  border: 1px solid rgba(10,10,10,0.2); padding: 5px 12px; border-radius: 100px;
+}
+.v-tag-pill.live { border-color: var(--red); color: var(--red); }
+.v-tag-pill.soon { color: var(--ink-light); border-color: rgba(10,10,10,0.12); }
+.v-arrow { font-size: 18px; color: var(--ink-light); transition: transform 0.2s, color 0.2s; }
+
+/* PRINCIPAL */
+#principal { padding: 100px 56px; background: var(--white); }
+.principal-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+.principal-photo { position: relative; }
+.principal-photo img { width: 100%; display: block; filter: saturate(0.9); }
+.principal-photo::after {
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: var(--red);
+}
+.p-label { color: var(--ink) !important; }
+.p-name {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 900; line-height: 0.92;
+  color: var(--red); margin-bottom: 6px; letter-spacing: -0.01em;
+}
+.p-role {
+  font-size: 14px; color: var(--ink); font-weight: 500;
+  letter-spacing: 0.04em; margin-bottom: 32px;
+}
+.p-body { font-size: 17px; line-height: 1.8; color: var(--ink-mid); margin-bottom: 18px; }
+.p-body strong { color: var(--ink); font-weight: 500; }
+.p-creds-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.p-cred-tag {
+  font-size: 12px; font-weight: 400; color: var(--ink-mid);
+  border: 1px solid rgba(10,10,10,0.15); padding: 6px 12px; border-radius: 2px;
+}
+.p-external {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 28px; font-size: 13px; font-weight: 500;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 2px solid var(--red); padding-bottom: 2px; transition: color 0.2s;
+}
+.p-external:hover { color: var(--red); }
+
+/* COMMITMENT */
+#commitment { padding: 100px 56px; background: var(--ink); }
+.commitment-header { margin-bottom: 60px; }
+.commitment-header .section-label { color: rgba(247,244,239,0.5); }
+.commitment-header .section-label::before { background: var(--red); }
+.commitment-header .section-h2 { color: var(--paper); }
+.beyond-label {
+  font-family: var(--font-body); font-size: 12px; font-weight: 600;
+  color: var(--white); letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.beyond-label::before {
+  content: ""; display: inline-block;
+  width: 24px; height: 1px; background: var(--red);
+}
+.scholarship-card {
+  max-width: 640px; margin: 0 auto; text-align: center;
+}
+.c-seal { width: 120px; height: auto; display: block; margin: 0 auto 28px; }
+.scholarship-card h3 {
+  font-family: var(--font-display); font-size: 36px; font-weight: 900;
+  color: var(--paper); margin-bottom: 16px; line-height: 1.1;
+}
+.scholarship-card p {
+  font-size: 17px; color: rgba(247,244,239,0.6);
+  line-height: 1.8; margin-bottom: 28px;
+}
+.c-card-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 500; color: var(--red);
+  text-decoration: none; border-bottom: 1px solid rgba(185,28,28,0.4);
+  padding-bottom: 2px; transition: border-color 0.2s;
+}
+.c-card-link:hover { border-color: var(--red); }
+
+/* CONTACT */
+#contact {
+  padding: 100px 56px; background: var(--paper);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+}
+.contact-label { color: var(--ink) !important; }
+.c-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 4.5vw, 66px);
+  font-weight: 900; line-height: 0.95;
+  color: var(--ink); margin-bottom: 20px;
+}
+.contact-left p { font-size: 17px; color: var(--ink); line-height: 1.8; margin-bottom: 36px; max-width: 400px; }
+.contact-detail { margin-bottom: 20px; }
+.contact-detail dt { font-size: 11px; color: var(--ink-light); letter-spacing: 0.06em; margin-bottom: 4px; }
+.contact-detail dd { font-size: 16px; color: var(--ink); }
+.contact-detail dd a { color: var(--ink); text-decoration: none; border-bottom: 1px solid rgba(10,10,10,0.2); }
+.contact-detail dd a:hover { color: var(--red); border-color: var(--red); }
+.social-links { display: flex; gap: 16px; margin-top: 28px; align-items: center; }
+.social-link {
+  display: flex; align-items: center; gap: 8px;
+  text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 500;
+  border-bottom: 1px solid rgba(10,10,10,0.2); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.social-link:hover { color: var(--red); border-color: var(--red); }
+.social-link svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.contact-form input,
+.contact-form textarea {
+  background: transparent; border: none;
+  border-bottom: 1px solid rgba(10,10,10,0.2);
+  color: var(--ink); padding: 12px 0; font-family: var(--font-body);
+  font-size: 16px; font-weight: 300; outline: none;
+  transition: border-color 0.2s; width: 100%;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--ink-light); }
+.contact-form input:focus,
+.contact-form textarea:focus { border-color: var(--ink); }
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form button {
+  margin-top: 12px; background: var(--ink); color: var(--paper);
+  border: none; padding: 16px 36px; font-family: var(--font-body);
+  font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
+  cursor: pointer; transition: background 0.2s; align-self: flex-start;
+}
+.contact-form button:hover { background: var(--red); }
+
+/* FOOTER */
+footer { background: var(--ink); color: var(--paper); padding: 60px 56px; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; padding-bottom: 48px;
+  border-bottom: 1px solid rgba(247,244,239,0.1); margin-bottom: 28px;
+}
+.footer-brand img { height: 52px; width: auto; display: block; margin-bottom: 16px; }
+.footer-brand p { font-size: 14px; color: rgba(247,244,239,0.4); line-height: 1.7; max-width: 260px; }
+.footer-col h4 { font-size: 11px; font-weight: 500; color: rgba(247,244,239,0.4); letter-spacing: 0.08em; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: 14px; color: rgba(247,244,239,0.6); text-decoration: none; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--paper); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-copy { font-size: 12px; color: rgba(247,244,239,0.3); letter-spacing: 0.04em; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.08s; } .d2 { transition-delay: 0.16s; } .d3 { transition-delay: 0.24s; }
+
+/* RESPONSIVE */
+@media(max-width:1100px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { min-height: 60vw; }
+  .hero-right .slide::before { display: none; }
+  .identity-grid { grid-template-columns: 1fr; }
+  .principal-grid { grid-template-columns: 1fr; }
+  .ventures-intro { grid-template-columns: 1fr; gap: 20px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:900px) {
+  .v-row { grid-template-columns: 48px 1fr; }
+  .v-logo-wrap { display: none; }
+  .v-arrow { display: none; }
+  .v-tag-pill { display: none; }
+}
+@media(max-width:768px) {
+  nav { padding: 0 20px; height: 68px; }
+  nav ul { display: none; }
+  .nav-logo img { height: 44px; }
+  #hero .hero-left { padding: 48px 24px 48px; }
+  #identity, #ventures, #principal, #commitment, #contact, footer { padding: 64px 24px; }
+  .v-row { grid-template-columns: 40px 1fr; gap: 16px; }
+  .v-logo-wrap { display: none; }  .v-arrow { display: none; }
+  #contact { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-metrics { flex-direction: column; gap: 20px; }
+  .hero-bg-text { font-size: 40vw; }
+}
+@media(prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+  .slide { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="RC3_Logo_Transparent.png" alt="RC3 Group">
+  </a>
+  <ul>
+    <li><a href="#identity">About</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#principal">Principal</a></li>
+    <li><a href="#commitment">Commitment</a></li>
+    <li><a href="#contact" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text" aria-hidden="true">RC3<br>III</div>
+  <div class="hero-left">
+    <div class="hero-label reveal"><strong>RC3 Group LLC</strong> &mdash; Cincinnati, OH</div>
+    <h1 class="hero-headline reveal">
+      Built on<br>
+      <span class="line-red">Resilience.</span><br>
+      Designed<br>to Thrive.
+    </h1>
+    <p class="hero-sub reveal">A multi-vertical holding company operating across logistics, real estate, media, beverage, and philanthropic ventures.</p>
+    <div class="hero-ctas reveal">
+      <a href="#ventures" class="btn-solid">View Ventures</a>
+      <a href="#principal" class="btn-text">Meet the Principal</a>
+    </div>
+    <div class="hero-metrics reveal">
+      <div class="metric">
+        <div class="metric-num">10<sup>+</sup></div>
+        <div class="metric-label">Years Experience</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">5</div>
+        <div class="metric-label">Active Ventures</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">500<sup>+</sup></div>
+        <div class="metric-label">Cases Litigated</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDESHOW -->
+  <div class="hero-right" role="region" aria-label="RC3 Group slideshow">
+    <div class="slide slide-logo active" id="slide-0">
+      <img src="RC3_Logo_Transparent.png" alt="RC3 Group Logo">
+    </div>
+    <div class="slide" id="slide-1">
+      <img src="Gemini_Generated_Image_ryj4m6ryj4m6ryj4.jpg" alt="RC3 Group Office">
+    </div>
+    <div class="slide" id="slide-2">
+      <img src="img_suit.jpg" alt="Richard L. Crosby III">
+      <div class="slide-label">Richard L. Crosby III &mdash; Founder &amp; Managing Principal</div>
+    </div>
+    <div class="slide-dots" role="tablist" aria-label="Slideshow navigation">
+      <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+      <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+      <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+    </div>
+  </div>
+</section>
+<hr class="red-rule">
+
+<!-- IDENTITY -->
+<section id="identity">
+  <div class="identity-grid">
+    <div>
+      <div class="section-label reveal">Who We Are</div>
+      <h2 class="section-h2 reveal">The RC3<br>Group.</h2>
+      <p class="identity-body reveal">RC3 Group is a Cincinnati-based multi-vertical holding company built on three principles: <strong>forensic transparency, corporate control, and elite standards.</strong></p>
+      <p class="identity-body reveal">Founded by a former Partner at an Am Law 100 firm with over 10 years of experience, every RC3 operation runs under one mandate &mdash; unapologetic excellence. Deep institutional knowledge of how systems actually operate, from the boardroom to the yard.</p>
+      <div class="identity-quote reveal">
+        <p>"The system tested me at its highest level. Its failure to break me resulted in absolute command of my future."</p>
+        <cite>&mdash; Richard L. Crosby III</cite>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-num">01</div>
+        <div class="pillar-content">
+          <h3>Forensic Transparency</h3>
+          <p>Every decision documented. Every position defensible. No hidden agendas.</p>
+        </div>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="pillar-num">02</div>
+        <div class="pillar-content">
+          <h3>Corporate Control</h3>
+          <p>We understand how corporations operate. We use that knowledge to build ones that actually work.</p>
+        </div>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pillar-num">03</div>
+        <div class="pillar-content">
+          <h3>Elite Standards</h3>
+          <p>Mediocrity is never an option. Every output at the highest level. Period.</p>
+        </div>
+      </div>
+      <div class="pillar reveal d3">
+        <div class="pillar-num">04</div>
+        <div class="pillar-content">
+          <h3>Perpetual Build</h3>
+          <p>We don't coast on what's built. The next venture is always already in motion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="red-rule">
+
+<!-- VENTURES -->
+<section id="ventures">
+  <div class="ventures-intro">
+    <div>
+      <div class="section-label reveal">Portfolio</div>
+      <h2 class="section-h2 reveal">Our<br>Ventures.</h2>
+    </div>
+    <div class="ventures-intro-right reveal">
+      <p>Five active verticals spanning supply chain, media, property services, nonprofit, and beverage. Each built with the same forensic standard RC3 applies to everything.</p>
+    </div>
+  </div>
+  <div class="ventures-list">
+    <a href="https://xsquirelogistics.com" target="_blank" class="v-row reveal">
+      <div class="v-index">01</div>
+      <div class="v-main">
+        <div class="v-name">Xsquire Logistics</div>
+        <div class="v-desc">Licensed freight brokerage. USDOT 4567030 &middot; MC# 01816107</div>
+      </div>
+      <div class="v-logo-wrap"><img src="img_xsquire.png" alt="Xsquire Logistics"></div>
+      <div><span class="v-tag-pill live">Live</span></div>
+      <div class="v-arrow">→</div>
+    </a>
+    <a href="https://thedisbarredxsquire.com" target="_blank" class="v-row reveal d1">
+      <div class="v-index">02</div>
+      <div class="v-main">
+        <div class="v-name">The Disbarred Xsquire</div>
+        <div class="v-desc">Legal commentary. Criminal justice. No filter.</div>
+      </div>
+      <div class="v-logo-wrap"><img src="img_podcast.png" alt="The Disbarred Xsquire"></div>
+      <div><span class="v-tag-pill live">Live</span></div>
+      <div class="v-arrow">→</div>
+    </a>
+    <a href="https://commafoundation.com" target="_blank" class="v-row reveal d2">
+      <div class="v-index">03</div>
+      <div class="v-main">
+        <div class="v-name">The Comma Foundation</div>
+        <div class="v-desc">501(c)(3) nonprofit. Affordable housing. Reentry. Reform.</div>
+      </div>
+      <div class="v-logo-wrap"><img src="img_comma.png" alt="The Comma Foundation"></div>
+      <div><span class="v-tag-pill live">Live</span></div>
+      <div class="v-arrow">→</div>
+    </a>
+    <div class="v-row reveal">
+      <div class="v-index">04</div>
+      <div class="v-main">
+        <div class="v-name">Triple Maintenance Group</div>
+        <div class="v-desc">Property maintenance and facility services.</div>
+      </div>
+      <div class="v-logo-wrap on-white"><img src="TMG_Logo_.png" alt="Triple Maintenance Group"></div>
+      <div><span class="v-tag-pill soon">Coming Soon</span></div>
+      <div class="v-arrow" style="opacity:0.3">→</div>
+    </div>
+    <div class="v-row reveal d1">
+      <div class="v-index">05</div>
+      <div class="v-main">
+        <div class="v-name">Xsquire Brewing Co.</div>
+        <div class="v-desc">Craft beer built for the comeback. Brewed for the ones counted out.</div>
+      </div>
+      <div class="v-logo-wrap"><img src="img_brewing.png" alt="Xsquire Brewing Co."></div>
+      <div><span class="v-tag-pill soon">Coming Soon</span></div>
+      <div class="v-arrow" style="opacity:0.3">→</div>
+    </div>
+  </div>
+</section>
+<hr class="red-rule">
+
+<!-- PRINCIPAL -->
+<section id="principal">
+  <div class="principal-grid">
+    <div class="principal-photo reveal">
+      <img src="3615787363333814180.jpg" alt="Richard L. Crosby III">
+    </div>
+    <div>
+      <div class="section-label p-label reveal">The Principal</div>
+      <h2 class="p-name reveal">Richard L.<br>Crosby III</h2>
+      <div class="p-role reveal">J.D. &mdash; Founder &amp; Managing Principal</div>
+      <p class="p-body reveal">Former Top 100 criminal defense attorney. Former U.S. Congressional candidate. Former federal inmate. Now founder, builder, and operator of a multi-vertical holding company that nobody saw coming.</p>
+      <p class="p-body reveal">Richard's legal expertise, corporate knowledge, and hard-earned perspective on how systems actually operate &mdash; from the boardroom to the yard &mdash; is the unfair advantage built into every RC3 venture.</p>
+      <div class="p-creds-strip reveal">
+        <span class="p-cred-tag">J.D. &mdash; University of Dayton</span>
+        <span class="p-cred-tag">Former Top 100 Criminal Defense</span>
+        <span class="p-cred-tag">Am Law 100 Alumni</span>
+        <span class="p-cred-tag">U.S. Congressional Candidate, OH-2 (2016)</span>
+        <span class="p-cred-tag">Top 40 Under 40 — 2018–2021</span>
+        <span class="p-cred-tag">Ohio Rising Star — 2019 &amp; 2020</span>
+      </div>
+      <a href="https://therichardcrosby.com" target="_blank" class="p-external reveal">Full Profile &nbsp;&mdash;&nbsp; therichardcrosby.com &nbsp;→</a>
+    </div>
+  </div>
+</section>
+<hr class="red-rule">
+
+<!-- COMMITMENT -->
+<section id="commitment">
+  <div class="commitment-header">
+    <div class="beyond-label reveal">Beyond Business</div>
+    <h2 class="section-h2 reveal" style="color:var(--paper);">Our<br>Commitment.</h2>
+  </div>
+  <div class="scholarship-card reveal">
+    <img src="seal__1_.png" alt="Richard L. Crosby III Scholarship" class="c-seal">
+    <h3>Richard L. Crosby III Scholarship</h3>
+    <p>An annual $1,000 scholarship awarded to deserving students in Cincinnati and Seattle &mdash; reflecting RC3 Group's commitment to education, opportunity, and community investment in the cities that shaped this organization.</p>
+    <a href="https://therichardcrosbyscholarship.com" target="_blank" class="c-card-link">therichardcrosbyscholarship.com →</a>
+  </div>
+</section>
+<hr class="red-rule">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left">
+    <div class="section-label contact-label reveal">Get In Touch</div>
+    <h2 class="c-h2 reveal">Let's<br>Talk.</h2>
+    <p class="reveal">Partnership inquiries, media requests, consulting, or anything else worth a conversation. RC3 operates at the highest level.</p>
+    <dl>
+      <div class="contact-detail reveal">
+        <dt>Email</dt>
+        <dd><a href="mailto:Richard@therc3group.com">Richard@therc3group.com</a></dd>
+      </div>
+      <div class="contact-detail reveal">
+        <dt>Location</dt>
+        <dd>Cincinnati, Ohio</dd>
+      </div>
+      <div class="contact-detail reveal">
+        <dt>Principal Site</dt>
+        <dd><a href="https://therichardcrosby.com" target="_blank">therichardcrosby.com</a></dd>
+      </div>
+    </dl>
+    <div class="social-links reveal">
+      <a href="https://www.linkedin.com/in/richard-c-66179b36a" target="_blank" class="social-link" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+  <form class="contact-form reveal" onsubmit="return false;">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="text" placeholder="Company">
+    <input type="text" placeholder="Subject">
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="RC3_Logo_Dark.png" alt="RC3 Group">
+      <p>A multi-vertical holding company built on resilience, designed to thrive. Cincinnati, Ohio.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Ventures</h4>
+      <ul>
+        <li><a href="https://xsquirelogistics.com" target="_blank">Xsquire Logistics</a></li>
+        <li><a href="https://thedisbarredxsquire.com" target="_blank">The Disbarred Xsquire</a></li>
+        <li><a href="https://commafoundation.com" target="_blank">The Comma Foundation</a></li>
+        <li><a href="#">Triple Maintenance Group</a></li>
+        <li><a href="#">Xsquire Brewing Co.</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Principal</h4>
+      <ul>
+        <li><a href="https://therichardcrosby.com" target="_blank">Personal Site</a></li>
+        <li><a href="https://therichardcrosbyscholarship.com" target="_blank">RC3 Scholarship</a></li>
+        <li><a href="#principal">About Richard</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:Richard@therc3group.com">Richard@therc3group.com</a></li>
+        <li><a href="https://www.linkedin.com/in/richard-c-66179b36a" target="_blank">LinkedIn</a></li>
+        <li><a href="#contact">Send a Message</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 RC3 Group LLC &mdash; All Rights Reserved &mdash; Cincinnati, Ohio</span>
+    <span class="footer-copy">Built on Resilience. Designed to Thrive.</span>
+  </div>
+</footer>
+
+<script>
+// REVEAL
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+// SLIDESHOW
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+let timer;
+
+function goToSlide(n) {
+  slides[current].classList.remove("active");
+  dots[current].classList.remove("active");
+  current = n;
+  slides[current].classList.add("active");
+  dots[current].classList.add("active");
+  resetTimer();
+}
+
+function nextSlide() {
+  goToSlide((current + 1) % slides.length);
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  timer = setInterval(nextSlide, 5000);
+}
+
+timer = setInterval(nextSlide, 5000);
+</script>
+</body>
+</html>
